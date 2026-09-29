@@ -19,7 +19,8 @@ class ReleaseInfoTest {
     }
     @Test void loadsPackagedReleaseMetadata() throws Exception {
         var info = ReleaseInfo.load();
-        assertEquals("Release Observatory", info.name());
+        // Intentional assignment demonstration: the test gate must stop deployment.
+        assertEquals("Intentional failure demonstration", info.name());
         assertFalse(info.version().contains("${"));
         assertFalse(info.commit().contains("${"));
     }
