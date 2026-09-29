@@ -67,7 +67,7 @@ public class ReleaseServlet extends HttpServlet {
             <div class="step"><span class="num">02 / AUTOMATE</span><strong>Jenkins</strong><p>The pipeline coordinates delivery.</p></div>
             <div class="step"><span class="num">03 / PACKAGE</span><strong>Maven</strong><p>Java code becomes a tested WAR.</p></div>
             <div class="step"><span class="num">04 / SERVE</span><strong>Tomcat</strong><p>The release becomes accessible.</p></div></div></main>
-            <footer><span>DevOps &amp; Continuous Delivery · Personal project</span><span><a href="health">Health</a> &nbsp; / &nbsp; <a href="version">Full commit</a></span></footer>
+            <footer><span>This page is developed by Sithum Wickramanayaka.</span><span><a href="health">Health</a> &nbsp; / &nbsp; <a href="version">Full commit</a></span></footer>
             </div></body></html>
             """.formatted(ReleaseInfo.escapeHtml(info.name()), ReleaseInfo.escapeHtml(info.message()),
                 ReleaseInfo.escapeHtml(info.version()), ReleaseInfo.escapeHtml(info.shortCommit()), ReleaseInfo.escapeHtml(info.build()));
