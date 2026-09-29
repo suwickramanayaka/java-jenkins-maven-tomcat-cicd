@@ -14,6 +14,14 @@ The demo uses HTTP on port 8081 and is available while the temporary EC2 server 
 
 ![Release Observatory on AWS, including author credit](docs/evidence/screenshots/application.png)
 
+### AWS EC2 hosting
+
+The project runs on the `java-cicd-demo` EC2 instance in Mumbai, using `c7i-flex.large`. The supplied console screenshot shows **Running** and **3/3 checks passed**.
+
+![AWS EC2 instance with account details and instance ID redacted](docs/evidence/screenshots/aws-ec2-redacted.png)
+
+*AI-assisted redacted copy of the supplied AWS console screenshot. Account details and the instance ID are hidden; visible deployment facts were checked against the original. The unredacted original is retained locally and excluded from Git.*
+
 ### Verified outcomes
 
 | Scenario | Environment | Recorded result |

@@ -34,6 +34,10 @@ The following runs were completed on the local Docker environment on September 2
 
 AWS application URL: `http://13.204.65.27:8081/cicd-demo/`. Public TCP 8081 access was enabled with user approval and verified with HTTP 200 and health `UP`; `/manager/html` returns HTTP 404. Jenkins remains private at `http://localhost:18080/` through the SSH tunnel. SSH remains restricted to the workstation's outbound IP. This temporary public IP can change after stopping and starting the server; no custom domain or HTTPS is configured.
 
+## AWS hosting evidence
+
+The [redacted EC2 console image](evidence/screenshots/aws-ec2-redacted.png) shows the project instance running in Mumbai with 3/3 status checks passed. Account details and the instance ID are hidden using AI-assisted image redaction; the visible deployment facts were checked against the user-supplied original. The original remains local and excluded from Git.
+
 ## Screenshots and later AWS validation
 
 See the [captioned evidence gallery](evidence/README.md) for the running app, AWS stages, WAR artifacts, passing tests, local automatic trigger, intentional failure and recovery. AWS build #6 serves commit `b935060` with the requested author credit; its build metadata and logs are included. AWS #2 and #3 experienced GitHub SSH authentication failures. The registered key was still present, and retrying the pipeline succeeded; the exact transient cause was not established. No credentials or host verification settings were changed to bypass authentication.
