@@ -27,6 +27,15 @@ ssh -i /path/to/your-key.pem -L 8080:127.0.0.1:8080 ubuntu@SERVER_IP
 
 Keep this connection open, then visit http://localhost:8080/. Read `.secrets/jenkins_admin_password` privately on the server and sign in as `admin`. Avoid including the password in screenshots or logs.
 
+For a private demonstration without opening an application firewall port, omit `--public-app` during configuration and forward both services:
+
+```bash
+ssh -i /path/to/your-key.pem -N \
+  -L 18080:127.0.0.1:8080 -L 18081:127.0.0.1:8081 ubuntu@SERVER_IP
+```
+
+Then use `http://localhost:18080/` for AWS Jenkins and `http://localhost:18081/cicd-demo/` for the AWS-hosted app. These ports can coexist with local Docker validation on 8080/8081. If SSH times out, ensure the allowed source IP is the terminal's outbound IP; a browser privacy relay can report a different address.
+
 Jenkins bootstrap creates:
 
 - One administrator; self-signup and anonymous access are disabled.

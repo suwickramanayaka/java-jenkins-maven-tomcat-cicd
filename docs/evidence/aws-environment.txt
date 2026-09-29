@@ -1,0 +1,29 @@
+Linux 6.17.0-1017-aws x86_64 GNU/Linux
+Docker version 29.8.1, build 4a63305
+Docker Compose version v5.5.1
+Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+Maven home: /usr/share/maven
+Java version: 21.0.9, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.17.0-1017-aws", arch: "amd64", family: "unix"
+Server version: Apache Tomcat/10.1.60
+Server built:   Sep 9 2026 22:35:59 UTC
+Server number:  10.1.60.0
+OS Name:        Linux
+OS Version:     6.17.0-1017-aws
+Architecture:   amd64
+JVM Version:    21.0.12.1+1-LTS
+JVM Vendor:     Eclipse Adoptium
+APR loaded:     true
+APR Version:    1.7.2
+Tomcat Native:  2.0.16
+OpenSSL (APR):  OpenSSL 3.0.13 30 Jan 2024
+
+Third-party libraries:
+  jakartaee-migration-1.0.12-shaded.jar: 1.0.12
+  ecj-4.27.jar:                          3.33.0.v20230218-1114
+NAME                  IMAGE                 COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+java-cicd-agent-1     java-cicd-agent       "/usr/local/bin/proj…"   agent     59 seconds ago   Up 41 seconds             
+java-cicd-jenkins-1   java-cicd-jenkins     "/usr/bin/tini -- /u…"   jenkins   59 seconds ago   Up 59 seconds (healthy)   127.0.0.1:8080->8080/tcp, 50000/tcp
+java-cicd-tomcat-1    java-cicd-tomcat      "/usr/local/bin/proj…"   tomcat    59 seconds ago   Up 58 seconds (healthy)   8080/tcp
+java-cicd-web-1       nginx:1.28.0-alpine   "/docker-entrypoint.…"   web       59 seconds ago   Up 53 seconds             80/tcp, 127.0.0.1:8081->8080/tcp

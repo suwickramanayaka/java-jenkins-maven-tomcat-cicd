@@ -1,0 +1,214 @@
+Started by user admin
+Obtained Jenkinsfile from git git@github.com:suwickramanayaka/java-jenkins-maven-tomcat-cicd.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on maven-agent in /home/jenkins/agent/workspace/java-cicd
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 20 min
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] deleteDir
+[Pipeline] checkout
+[2026-09-29T14:48:32.242Z] Selected Git installation does not exist. Using Default
+[2026-09-29T14:48:32.245Z] The recommended git tool is: NONE
+[2026-09-29T14:48:35.573Z] using credential github-ssh
+[2026-09-29T14:48:35.610Z] Cloning the remote Git repository
+[2026-09-29T14:48:35.664Z] Cloning repository git@github.com:suwickramanayaka/java-jenkins-maven-tomcat-cicd.git
+[2026-09-29T14:48:35.765Z]  > git init /home/jenkins/agent/workspace/java-cicd # timeout=10
+[2026-09-29T14:48:35.860Z] Fetching upstream changes from git@github.com:suwickramanayaka/java-jenkins-maven-tomcat-cicd.git
+[2026-09-29T14:48:35.862Z]  > git --version # timeout=10
+[2026-09-29T14:48:35.869Z]  > git --version # 'git version 2.43.0'
+[2026-09-29T14:48:35.870Z] using GIT_SSH to set credentials Read-only repository deploy key
+[2026-09-29T14:48:35.884Z] Verifying host key using known hosts file
+[2026-09-29T14:48:35.906Z] You're using 'Known hosts file' strategy to verify ssh host keys, but your known_hosts file does not exist, please go to 'Manage Jenkins' -> 'Security' -> 'Git Host Key Verification Configuration' and configure host key verification.
+[2026-09-29T14:48:35.917Z]  > git fetch --tags --force --progress -- git@github.com:suwickramanayaka/java-jenkins-maven-tomcat-cicd.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-09-29T14:48:39.054Z]  > git config remote.origin.url git@github.com:suwickramanayaka/java-jenkins-maven-tomcat-cicd.git # timeout=10
+[2026-09-29T14:48:39.060Z]  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-09-29T14:48:39.582Z] Avoid second fetch
+[2026-09-29T14:48:39.619Z] Checking out Revision b02f7732e37801ed7a1470a0c5a2e08e49d11d61 (refs/remotes/origin/main)
+[2026-09-29T14:48:39.595Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-09-29T14:48:39.630Z]  > git config core.sparsecheckout # timeout=10
+[2026-09-29T14:48:39.636Z]  > git checkout -f b02f7732e37801ed7a1470a0c5a2e08e49d11d61 # timeout=10
+[2026-09-29T14:48:42.896Z] Commit message: "Restore passing test after demonstrating deployment protection"
+[2026-09-29T14:48:42.901Z] First time build. Skipping changelog.
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-09-29T14:48:43.577Z] + git rev-parse HEAD
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
+[2026-09-29T14:48:44.101Z] + mvn -B -ntp clean compile -Dgit.commit=b02f7732e37801ed7a1470a0c5a2e08e49d11d61 -Dbuild.number=1
+[2026-09-29T14:48:45.490Z] [INFO] Scanning for projects...
+[2026-09-29T14:48:45.756Z] [INFO] 
+[2026-09-29T14:48:45.757Z] [INFO] -----------------------< dev.cicddemo:cicd-demo >-----------------------
+[2026-09-29T14:48:45.757Z] [INFO] Building Release Observatory 1.0.0
+[2026-09-29T14:48:45.757Z] [INFO]   from pom.xml
+[2026-09-29T14:48:45.757Z] [INFO] --------------------------------[ war ]---------------------------------
+[2026-09-29T14:48:47.141Z] [INFO] 
+[2026-09-29T14:48:47.142Z] [INFO] --- clean:3.4.1:clean (default-clean) @ cicd-demo ---
+[2026-09-29T14:48:47.142Z] [INFO] 
+[2026-09-29T14:48:47.142Z] [INFO] --- resources:3.3.1:resources (default-resources) @ cicd-demo ---
+[2026-09-29T14:48:48.089Z] [INFO] Copying 1 resource from src/main/resources to target/classes
+[2026-09-29T14:48:48.089Z] [INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[2026-09-29T14:48:48.089Z] [INFO] 
+[2026-09-29T14:48:48.089Z] [INFO] --- compiler:3.13.0:compile (default-compile) @ cicd-demo ---
+[2026-09-29T14:48:48.662Z] [INFO] Recompiling the module because of changed source code.
+[2026-09-29T14:48:48.662Z] [INFO] Compiling 2 source files with javac [debug release 21] to target/classes
+[2026-09-29T14:48:49.630Z] [INFO] ------------------------------------------------------------------------
+[2026-09-29T14:48:49.630Z] [INFO] BUILD SUCCESS
+[2026-09-29T14:48:49.630Z] [INFO] ------------------------------------------------------------------------
+[2026-09-29T14:48:49.630Z] [INFO] Total time:  3.984 s
+[2026-09-29T14:48:49.630Z] [INFO] Finished at: 2026-09-29T14:48:49Z
+[2026-09-29T14:48:49.630Z] [INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] sh
+[2026-09-29T14:48:50.070Z] + mvn -B -ntp test -Dgit.commit=b02f7732e37801ed7a1470a0c5a2e08e49d11d61 -Dbuild.number=1
+[2026-09-29T14:48:51.473Z] [INFO] Scanning for projects...
+[2026-09-29T14:48:51.736Z] [INFO] 
+[2026-09-29T14:48:51.736Z] [INFO] -----------------------< dev.cicddemo:cicd-demo >-----------------------
+[2026-09-29T14:48:51.736Z] [INFO] Building Release Observatory 1.0.0
+[2026-09-29T14:48:51.736Z] [INFO]   from pom.xml
+[2026-09-29T14:48:51.736Z] [INFO] --------------------------------[ war ]---------------------------------
+[2026-09-29T14:48:52.675Z] [INFO] 
+[2026-09-29T14:48:52.675Z] [INFO] --- resources:3.3.1:resources (default-resources) @ cicd-demo ---
+[2026-09-29T14:48:52.938Z] [INFO] Copying 1 resource from src/main/resources to target/classes
+[2026-09-29T14:48:52.938Z] [INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[2026-09-29T14:48:52.938Z] [INFO] 
+[2026-09-29T14:48:52.938Z] [INFO] --- compiler:3.13.0:compile (default-compile) @ cicd-demo ---
+[2026-09-29T14:48:52.938Z] [INFO] Nothing to compile - all classes are up to date.
+[2026-09-29T14:48:52.938Z] [INFO] 
+[2026-09-29T14:48:52.938Z] [INFO] --- resources:3.3.1:testResources (default-testResources) @ cicd-demo ---
+[2026-09-29T14:48:52.938Z] [INFO] skip non existing resourceDirectory /home/jenkins/agent/workspace/java-cicd/src/test/resources
+[2026-09-29T14:48:52.938Z] [INFO] 
+[2026-09-29T14:48:52.938Z] [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ cicd-demo ---
+[2026-09-29T14:48:52.938Z] [INFO] Recompiling the module because of changed source code.
+[2026-09-29T14:48:52.938Z] [INFO] Compiling 1 source file with javac [debug release 21] to target/test-classes
+[2026-09-29T14:48:53.892Z] [INFO] 
+[2026-09-29T14:48:53.892Z] [INFO] --- surefire:3.5.2:test (default-test) @ cicd-demo ---
+[2026-09-29T14:48:54.823Z] [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[2026-09-29T14:48:55.086Z] [INFO] 
+[2026-09-29T14:48:55.086Z] [INFO] -------------------------------------------------------
+[2026-09-29T14:48:55.086Z] [INFO]  T E S T S
+[2026-09-29T14:48:55.086Z] [INFO] -------------------------------------------------------
+[2026-09-29T14:48:55.665Z] [INFO] Running dev.cicddemo.ReleaseInfoTest
+[2026-09-29T14:48:55.920Z] [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 s -- in dev.cicddemo.ReleaseInfoTest
+[2026-09-29T14:48:55.920Z] [INFO] 
+[2026-09-29T14:48:55.921Z] [INFO] Results:
+[2026-09-29T14:48:55.921Z] [INFO] 
+[2026-09-29T14:48:55.921Z] [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[2026-09-29T14:48:55.921Z] [INFO] 
+[2026-09-29T14:48:55.921Z] [INFO] ------------------------------------------------------------------------
+[2026-09-29T14:48:55.921Z] [INFO] BUILD SUCCESS
+[2026-09-29T14:48:55.921Z] [INFO] ------------------------------------------------------------------------
+[2026-09-29T14:48:55.921Z] [INFO] Total time:  4.290 s
+[2026-09-29T14:48:55.921Z] [INFO] Finished at: 2026-09-29T14:48:55Z
+[2026-09-29T14:48:55.921Z] [INFO] ------------------------------------------------------------------------
+Post stage
+[Pipeline] junit
+[2026-09-29T14:48:56.036Z] Recording test results
+[2026-09-29T14:48:57.163Z] [Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Package)
+[Pipeline] sh
+[2026-09-29T14:48:57.629Z] + mvn -B -ntp package -Dgit.commit=b02f7732e37801ed7a1470a0c5a2e08e49d11d61 -Dbuild.number=1
+[2026-09-29T14:48:59.019Z] [INFO] Scanning for projects...
+[2026-09-29T14:48:59.019Z] [INFO] 
+[2026-09-29T14:48:59.019Z] [INFO] -----------------------< dev.cicddemo:cicd-demo >-----------------------
+[2026-09-29T14:48:59.019Z] [INFO] Building Release Observatory 1.0.0
+[2026-09-29T14:48:59.019Z] [INFO]   from pom.xml
+[2026-09-29T14:48:59.019Z] [INFO] --------------------------------[ war ]---------------------------------
+[2026-09-29T14:48:59.968Z] [INFO] 
+[2026-09-29T14:48:59.968Z] [INFO] --- resources:3.3.1:resources (default-resources) @ cicd-demo ---
+[2026-09-29T14:49:00.236Z] [INFO] Copying 1 resource from src/main/resources to target/classes
+[2026-09-29T14:49:00.502Z] [INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[2026-09-29T14:49:00.503Z] [INFO] 
+[2026-09-29T14:49:00.503Z] [INFO] --- compiler:3.13.0:compile (default-compile) @ cicd-demo ---
+[2026-09-29T14:49:00.503Z] [INFO] Nothing to compile - all classes are up to date.
+[2026-09-29T14:49:00.503Z] [INFO] 
+[2026-09-29T14:49:00.503Z] [INFO] --- resources:3.3.1:testResources (default-testResources) @ cicd-demo ---
+[2026-09-29T14:49:00.503Z] [INFO] skip non existing resourceDirectory /home/jenkins/agent/workspace/java-cicd/src/test/resources
+[2026-09-29T14:49:00.503Z] [INFO] 
+[2026-09-29T14:49:00.503Z] [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ cicd-demo ---
+[2026-09-29T14:49:00.503Z] [INFO] Nothing to compile - all classes are up to date.
+[2026-09-29T14:49:00.503Z] [INFO] 
+[2026-09-29T14:49:00.503Z] [INFO] --- surefire:3.5.2:test (default-test) @ cicd-demo ---
+[2026-09-29T14:49:00.771Z] [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[2026-09-29T14:49:00.771Z] [INFO] 
+[2026-09-29T14:49:00.772Z] [INFO] -------------------------------------------------------
+[2026-09-29T14:49:00.773Z] [INFO]  T E S T S
+[2026-09-29T14:49:00.773Z] [INFO] -------------------------------------------------------
+[2026-09-29T14:49:01.344Z] [INFO] Running dev.cicddemo.ReleaseInfoTest
+[2026-09-29T14:49:01.345Z] [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s -- in dev.cicddemo.ReleaseInfoTest
+[2026-09-29T14:49:01.345Z] [INFO] 
+[2026-09-29T14:49:01.345Z] [INFO] Results:
+[2026-09-29T14:49:01.345Z] [INFO] 
+[2026-09-29T14:49:01.345Z] [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[2026-09-29T14:49:01.345Z] [INFO] 
+[2026-09-29T14:49:01.345Z] [INFO] 
+[2026-09-29T14:49:01.345Z] [INFO] --- war:3.4.0:war (default-war) @ cicd-demo ---
+[2026-09-29T14:49:03.244Z] [INFO] Packaging webapp
+[2026-09-29T14:49:03.244Z] [INFO] Assembling webapp [cicd-demo] in [/home/jenkins/agent/workspace/java-cicd/target/cicd-demo]
+[2026-09-29T14:49:03.244Z] [INFO] Processing war project
+[2026-09-29T14:49:03.512Z] [INFO] Building war: /home/jenkins/agent/workspace/java-cicd/target/cicd-demo.war
+[2026-09-29T14:49:03.512Z] [INFO] ------------------------------------------------------------------------
+[2026-09-29T14:49:03.512Z] [INFO] BUILD SUCCESS
+[2026-09-29T14:49:03.512Z] [INFO] ------------------------------------------------------------------------
+[2026-09-29T14:49:03.512Z] [INFO] Total time:  4.531 s
+[2026-09-29T14:49:03.512Z] [INFO] Finished at: 2026-09-29T14:49:03Z
+[2026-09-29T14:49:03.512Z] [INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Archive)
+[Pipeline] sh
+[2026-09-29T14:49:03.941Z] + sha256sum target/cicd-demo.war
+[Pipeline] archiveArtifacts
+[2026-09-29T14:49:03.979Z] Archiving artifacts
+[2026-09-29T14:49:04.069Z] Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] withCredentials
+[2026-09-29T14:49:04.254Z] Masking supported pattern matches of $TOMCAT_PASSWORD
+[Pipeline] {
+[Pipeline] sh
+[2026-09-29T14:49:04.683Z] + bash scripts/deploy.sh target/cicd-demo.war
+[2026-09-29T14:49:04.683Z] OK - Deployed application at context path [/cicd-demo]
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+[Pipeline] sh
+[2026-09-29T14:49:05.124Z] + bash scripts/smoke-test.sh http://tomcat:8080/cicd-demo b02f7732e37801ed7a1470a0c5a2e08e49d11d61
+[2026-09-29T14:49:05.124Z] Verified healthy application and release b02f7732e37801ed7a1470a0c5a2e08e49d11d61 at http://tomcat:8080/cicd-demo/
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

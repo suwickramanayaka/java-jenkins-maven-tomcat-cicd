@@ -1,0 +1,2 @@
+After build 3 failed, /version still returned successful build 2 commit:
+3da6be371b3b85ab25ba73688ec5197b118f44d9

@@ -1,0 +1,10 @@
+Local validation — 2026-09-29
+Docker Desktop Linux VM: 6.10.14-linuxkit, aarch64
+Jenkins: 2.568.3 LTS (image tag)
+Maven: 3.9.11
+Build agent Java: Eclipse Temurin 21.0.9
+Tomcat: 10.1.60
+Tomcat Java: Eclipse Temurin 21.0.12.1+1-LTS
+Nginx: 1.28.0 (image tag)
+Five JUnit tests pass in initial build.
+AWS deployment is separate and remains pending.
