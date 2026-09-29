@@ -1,6 +1,38 @@
-# Design and Implementation of a CI/CD Pipeline for a Java Web Application Using Jenkins, Maven, and Apache Tomcat
+# Release Observatory — Java CI/CD Pipeline
+
+**Developed by Sithum Wickramanayaka**
+
+Design and Implementation of a CI/CD Pipeline for a Java Web Application Using Jenkins, Maven, and Apache Tomcat
 
 Release Observatory is a small Java web application that makes a deployed release identifiable by its version, source commit, and Jenkins build number. The project demonstrates source checkout, compilation, automated testing, WAR packaging, artifact archiving, Tomcat deployment, and HTTP verification.
+
+## Live demo and screenshots
+
+[Open the temporary AWS demo](http://13.204.65.27:8081/cicd-demo/) · [Evidence gallery](docs/evidence/README.md) · [Project report](docs/report.md)
+
+The demo uses HTTP on port 8081 and is available while the temporary EC2 server runs. Its public IP may change after a stop/start. Jenkins is private and requires an SSH tunnel; there is no public administrator login. The AWS Free Plan consumes credits and is not permanent free hosting.
+
+![Release Observatory on AWS, including author credit](docs/evidence/screenshots/application.png)
+
+### Verified outcomes
+
+| Scenario | Environment | Recorded result |
+| --- | --- | --- |
+| Build, test, archive, deploy and verify | Local #1 / AWS #1 | Successful delivery from a private GitHub repository |
+| Visible update detected by SCM polling | Local #2 | Automatically deployed commit `3da6be3` |
+| Deliberately failing test | Local #3 | Deployment skipped; previous release kept running |
+| Corrected test | Local #4 | Five passing tests and successful recovery |
+| Author credit in footer | AWS #4–#6 | Commit `b935060` deployed successfully |
+
+Results and screenshots were recorded on September 29, 2026. They are historical evidence, not a live status badge. AWS #2/#3 encountered GitHub SSH authentication failures; a retry succeeded. These are distinct from the intentional local test failure.
+
+![AWS Jenkins pipeline stage view](docs/evidence/screenshots/aws-pipeline.png)
+
+## Technology
+
+Java 21 · Maven 3.9.11 · JUnit 5 · Jenkins 2.568.3 · Apache Tomcat 10.1.60 · Nginx 1.28.0 · Docker Compose · Ubuntu 24.04 on AWS EC2.
+
+The app is packaged as a WAR using Jakarta Servlet 6. Its homepage, `/health`, and `/version` make the deployed build observable. Exact runtime versions are saved in the [evidence folder](docs/evidence/README.md).
 
 ## Architecture
 
@@ -26,8 +58,8 @@ Jenkins administration binds to the server's loopback interface and is reached t
 
 1. Follow [setup](docs/setup.md) for local containers or a fresh Ubuntu server.
 2. Follow [AWS deployment](docs/aws.md) when launching the temporary Free Plan server.
-3. Run the [demonstration](docs/demonstration.md) and capture the required evidence.
-4. Complete the [report](docs/report.md) with real build numbers, commits and URLs.
+3. Browse the [captured evidence](docs/evidence/README.md), or repeat the [demonstration](docs/demonstration.md).
+4. Read the [report](docs/report.md) for results, tradeoffs, troubleshooting and improvements.
 5. Follow [teardown](docs/teardown.md) after exporting evidence.
 
 ## Quick start
@@ -77,6 +109,17 @@ The WAR is `target/cicd-demo.war`. Java classpaths use `:` as a separator on mac
 
 Failures stop later stages. Concurrent builds are disabled to prevent deployment races. A failure after deployment does not automatically restore the old application; rollback is a documented future improvement. The single-server design allows brief downtime during redeployment and is intended for this learning project.
 
+## Repository layout
+
+```text
+src/                 Java servlet, release metadata and unit tests
+Jenkinsfile          Seven-stage delivery pipeline
+compose.yaml         Controller, agent, Tomcat and application proxy
+infrastructure/      Container images, bootstrap and proxy configuration
+scripts/             Configuration, Ubuntu setup, deployment and smoke checks
+docs/                Setup, AWS guide, report, teardown and captured evidence
+```
+
 ## Recreate later
 
 Provision a fresh Ubuntu server, clone this repository, install Docker, regenerate local secrets, start Compose, and run the pipeline. GitHub holds the source and setup, not Jenkins history or credentials. A new server can have a new IP address. AWS Free Plan eligibility and remaining credits must be checked again; recreating a server does not renew them.
@@ -93,3 +136,7 @@ Provision a fresh Ubuntu server, clone this repository, install Docker, regenera
 - [AWS Free Plan](https://aws.amazon.com/free/)
 
 Original project contributions include the release dashboard, release identity checks, tests, Jenkins bootstrap, deployment scripts, private management access, and reproducible documentation. Review and adapt all generated work so you can explain it in your individual assignment.
+
+## Author and reuse
+
+Developed by **Sithum Wickramanayaka** as a personal learning project, with AI assistance. No open-source license has been selected; public visibility alone does not grant a license to redistribute or modify the code.

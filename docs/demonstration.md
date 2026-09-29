@@ -1,6 +1,6 @@
 # Demonstration and evidence
 
-Use actual results only. Do not label local validation as an AWS deployment.
+Completed captures and logs are in the [evidence gallery](evidence/README.md). The steps below reproduce the demonstration. Local validation and AWS deployment are labeled separately.
 
 ## A. Initial success
 
