@@ -1,0 +1,12 @@
+target/
+.env
+.secrets/
+.local/
+.DS_Store
+*.pem
+*.key
+*.log
+.idea/
+.vscode/
+docs/evidence/private/
+Jenkins_Maven_Tomcat_Assignment_Specification.pdf

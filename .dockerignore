@@ -1,0 +1,7 @@
+.git
+.env
+.secrets
+.local
+target
+*.pdf
+docs/evidence
