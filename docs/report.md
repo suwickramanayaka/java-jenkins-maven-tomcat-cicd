@@ -32,7 +32,7 @@ The following runs were completed on the local Docker environment on September 2
 | Recovery | Local #4 | `b02f773` | `local-build-4.*` | SUCCESS; corrected test; all 5 tests pass; exact commit deployed |
 | Fresh AWS environment | AWS #1 | `b02f773` | `aws-build-1.*`, `aws-environment.txt` | SUCCESS; built images on fresh Ubuntu; fetched private GitHub repository; 5 tests pass; WAR archived and deployed; exact commit verified |
 
-AWS application context path: `/cicd-demo/`. It is currently private and reachable through the SSH tunnel at `http://localhost:18081/cicd-demo/`; AWS Jenkins is at `http://localhost:18080/`. These localhost endpoints forward to EC2, rather than the local Docker stack. Only SSH from the workstation's outbound IP is allowed inbound. Public application access and a custom domain have not been enabled.
+AWS application URL: `http://13.204.65.27:8081/cicd-demo/`. Public TCP 8081 access was enabled with user approval and verified with HTTP 200 and health `UP`; `/manager/html` returns HTTP 404. Jenkins remains private at `http://localhost:18080/` through the SSH tunnel. SSH remains restricted to the workstation's outbound IP. This temporary public IP can change after stopping and starting the server; no custom domain or HTTPS is configured.
 
 ## Manual versus automated deployment
 
