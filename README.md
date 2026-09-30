@@ -122,8 +122,6 @@ Provision a fresh Ubuntu server, clone this repository, install Docker, regenera
 
 ## References and attribution
 
-- Assignment: `Jenkins_Maven_Tomcat_Assignment_Specification.pdf` (retained locally).
-- [Assignment's suggested tutorial](https://youtu.be/pRHIw-WAZsg): assignment reference; this implementation is independently written, not a claim to reproduce the video's code.
 - [Jenkins Pipeline documentation](https://www.jenkins.io/doc/book/pipeline/)
 - [Jenkins Docker documentation](https://www.jenkins.io/doc/book/installing/docker/)
 - [Maven lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
