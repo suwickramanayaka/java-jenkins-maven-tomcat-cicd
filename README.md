@@ -131,6 +131,6 @@ Provision a fresh Ubuntu server, clone this repository, install Docker, regenera
 
 Original project contributions include the release dashboard, release identity checks, tests, Jenkins bootstrap, deployment scripts, private management access, and reproducible documentation.
 
-## Author and reuse
+## Author
 
-Developed by **Sithum Wickramanayaka** as a personal learning project. No open-source license has been selected; public visibility alone does not grant a license to redistribute or modify the code.
+Developed by **Sithum Wickramanayaka** as a personal learning project.
