@@ -8,7 +8,7 @@ The project demonstrates automated delivery of a Java web application using Git,
 
 ## Architecture and environment
 
-Use the architecture diagram in `README.md`. Jenkins coordinates the workflow; a separate agent compiles, tests and packages the WAR. Jenkins archives the WAR and checksum. The agent deploys that same file through Tomcat's Manager API. An application-only proxy exposes the homepage while management interfaces remain private.
+See the [deployment architecture](architecture/README.md), available as an editable draw.io document and PNG/SVG previews. Jenkins coordinates the workflow; a separate agent compiles, tests and packages the WAR. Jenkins archives the WAR and checksum. The agent deploys that same file through Tomcat's Manager API. An application-only proxy exposes the homepage while management interfaces remain private.
 
 Actual software versions are recorded in `docs/evidence/local-environment.txt` and `docs/evidence/aws-environment.txt`; exact plugin versions are in `infrastructure/jenkins/plugins.txt`. AWS uses Ubuntu 24.04 on a c7i-flex.large (2 vCPU, 4 GiB RAM), with a 25 GiB encrypted gp3 root volume. Local validation uses Docker Desktop on ARM64; the fresh AWS environment uses x86_64.
 

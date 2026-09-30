@@ -44,21 +44,9 @@ The app is packaged as a WAR using Jakarta Servlet 6. Its homepage, `/health`, a
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    Developer[Developer's Mac] -->|commit and push| GitHub[GitHub repository]
-    subgraph EC2[Ubuntu EC2 server]
-        Jenkins[Jenkins controller] -->|one executor| Agent[Java 21 / Maven agent]
-        Agent --> Tests[Compile and unit tests]
-        Tests --> WAR[WAR + SHA-256]
-        WAR --> Archive[Jenkins artifact archive]
-        WAR -->|Manager text API| Tomcat[Tomcat]
-        Agent -->|health + exact commit| Tomcat
-        Web[Application-only reverse proxy] --> Tomcat
-    end
-    GitHub -->|SCM polling every two minutes| Jenkins
-    Browser[User browser] --> Web
-```
+![Java CI/CD deployment architecture with official technology icons](docs/architecture/architecture.png)
+
+[View full-size SVG](docs/architecture/architecture.svg) · [Download editable draw.io source](docs/architecture/architecture.drawio) · [Diagram guide and icon credits](docs/architecture/README.md)
 
 Jenkins administration binds to the server's loopback interface and is reached through an SSH tunnel. The public proxy serves only `/cicd-demo/`; Tomcat Manager has no published host port. Jenkins builds run on a dedicated agent, not on its controller. No service mounts the Docker socket.
 
