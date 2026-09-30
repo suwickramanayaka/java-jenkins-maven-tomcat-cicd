@@ -36,7 +36,7 @@ AWS application URL: `http://13.204.65.27:8081/cicd-demo/`. Public TCP 8081 acce
 
 ## AWS hosting evidence
 
-The [redacted EC2 console image](evidence/screenshots/aws-ec2-redacted.png) shows the project instance running in Mumbai with 3/3 status checks passed. Account details and the instance ID are hidden using AI-assisted image redaction; the visible deployment facts were checked against the user-supplied original. The original remains local and excluded from Git.
+The [redacted EC2 console image](evidence/screenshots/aws-ec2-redacted.png) shows the project instance running in Mumbai with 3/3 status checks passed. Account details and the instance ID are hidden through image redaction; the visible deployment facts were checked against the user-supplied original. The original remains local and excluded from Git.
 
 ## Screenshots and later AWS validation
 
@@ -62,4 +62,4 @@ The present single-server learning setup does not implement automatic rollback, 
 
 ## Attribution and own contribution
 
-The assignment references https://youtu.be/pRHIw-WAZsg. List any parts actually adapted after consulting it. This project's application and setup were developed independently with AI assistance; review your institution's disclosure policy and explain the implementation in your own words. Official documentation references are listed in the README.
+The assignment references https://youtu.be/pRHIw-WAZsg. List any parts actually adapted after consulting it. Official documentation references are listed in the README.

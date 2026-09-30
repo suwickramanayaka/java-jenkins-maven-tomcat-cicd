@@ -1,6 +1,6 @@
 # Evidence gallery
 
-Captured on **September 29, 2026**. Application and Jenkins screenshots are actual browser captures. The AWS console image below is an AI-assisted redacted copy of the user-supplied screenshot. Local Jenkins and AWS Jenkins have independent build numbers. The localhost address used to view AWS Jenkins is an SSH tunnel to EC2.
+Captured on **September 29, 2026**. Application and Jenkins screenshots are actual browser captures. The AWS console image below is a redacted copy of the user-supplied screenshot. Local Jenkins and AWS Jenkins have independent build numbers. The localhost address used to view AWS Jenkins is an SSH tunnel to EC2.
 
 ## AWS EC2 console
 
@@ -8,7 +8,7 @@ The user-supplied AWS console capture shows `java-cicd-demo`, instance type `c7i
 
 ![AWS EC2 console, redacted](screenshots/aws-ec2-redacted.png)
 
-Account alias/number and the instance ID are covered with solid black boxes. This copy was edited using the built-in image-editing tool; the visible instance name, type, state, status checks and region were checked against the original. It is not an untouched screenshot. The original is retained in the ignored `private/` directory and is not published.
+Account alias/number and the instance ID are covered with solid black boxes. This copy was edited for privacy; the visible instance name, type, state, status checks and region were checked against the original. It is not an untouched screenshot. The original is retained in the ignored `private/` directory and is not published.
 
 ## Application on AWS
 

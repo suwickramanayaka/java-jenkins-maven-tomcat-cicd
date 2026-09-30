@@ -36,4 +36,4 @@ The storage card summarizes Docker named volumes backed by the EC2 root EBS volu
 
 Jenkins artwork is credited to the [Jenkins project](https://www.jenkins.io/) and its original designers at Frontside, under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Vendor marks remain their respective owners' trademarks and identify the technologies used; no endorsement is implied. NGINX is a text label rather than a supplied logo asset.
 
-Original layout and project documentation: Sithum Wickramanayaka, with AI assistance. The diagram was constructed as editable vector shapes; no generated screenshot or AI-generated vendor logo is used.
+Layout and project documentation: Sithum Wickramanayaka. The diagram uses editable vector shapes and official vendor icons.

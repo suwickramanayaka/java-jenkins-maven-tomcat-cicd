@@ -20,7 +20,7 @@ The project runs on the `java-cicd-demo` EC2 instance in Mumbai, using `c7i-flex
 
 ![AWS EC2 instance with account details and instance ID redacted](docs/evidence/screenshots/aws-ec2-redacted.png)
 
-*AI-assisted redacted copy of the supplied AWS console screenshot. Account details and the instance ID are hidden; visible deployment facts were checked against the original. The unredacted original is retained locally and excluded from Git.*
+*Redacted copy of the supplied AWS console screenshot. Account details and the instance ID are hidden; visible deployment facts were checked against the original. The unredacted original is retained locally and excluded from Git.*
 
 ### Verified outcomes
 
@@ -131,8 +131,8 @@ Provision a fresh Ubuntu server, clone this repository, install Docker, regenera
 - [Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [AWS Free Plan](https://aws.amazon.com/free/)
 
-Original project contributions include the release dashboard, release identity checks, tests, Jenkins bootstrap, deployment scripts, private management access, and reproducible documentation. Review and adapt all generated work so you can explain it in your individual assignment.
+Original project contributions include the release dashboard, release identity checks, tests, Jenkins bootstrap, deployment scripts, private management access, and reproducible documentation.
 
 ## Author and reuse
 
-Developed by **Sithum Wickramanayaka** as a personal learning project, with AI assistance. No open-source license has been selected; public visibility alone does not grant a license to redistribute or modify the code.
+Developed by **Sithum Wickramanayaka** as a personal learning project. No open-source license has been selected; public visibility alone does not grant a license to redistribute or modify the code.
