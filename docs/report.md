@@ -60,6 +60,3 @@ Manual delivery requires a person to fetch code, choose commands, inspect test o
 
 The present single-server learning setup does not implement automatic rollback, zero-downtime deployment or production HTTPS. Jenkins is reached over an SSH tunnel. No claim of production readiness is made.
 
-## Attribution and own contribution
-
-The assignment references https://youtu.be/pRHIw-WAZsg. List any parts actually adapted after consulting it. Official documentation references are listed in the README.
